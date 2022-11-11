@@ -5,7 +5,6 @@
 // 3. Write draft solution & testing (CODE)
 // 4. Refactoring & final testing -> final solution
 
-
 //input Number;
 //output undefined;
 
@@ -18,27 +17,49 @@
 //   2.3 if counter >= 2 -> is not prime
 // 3. if prime -> console
 
-function getPrimes(num) {
-  console.log('NUM ', num);
-  for (let number = 2; number <= num; number++) {
-    console.log('CHECKING IF NUMBER IS PRIME ' + number);
-    let counter = 0;
+//problems
+// 1. loop inside loop
+// 2.
 
-    for (let index = 1; index <= number; index++) {
-      // console.log('STEP ' + index);
-      if (number % index === 0) {
-        console.log('COUNTER FOUND ' + index);
-        counter++;
+function getPrimes(num) {
+    console.log('NUM ', num);
+    for (let number = 2; number <= num; number++) {
+        console.log('CHECKING IF NUMBER IS PRIME ' + number);
+        let counter = 0;
+
+        for (let index = 1; index <= number; index++) {
+            // console.log('STEP ' + index);
+            if (number % index === 0) {
+                console.log('COUNTER FOUND ' + index);
+                counter++;
+            }
+        }
+
+        console.log('FOR NUMBER ' + number + ' COUNTER FOUND ' + counter);
+
+        if (counter === 2) {
+            console.log(number);
         }
     }
+}
 
-    console.log('FOR NUMBER ' + number + ' COUNTER FOUND ' + counter);
+//refactoring
 
-    if (counter === 2) {
-
-      console.log(number);
+function isPrime(number) {
+    for (let index = 2; index < number; index++) {
+        if (number % index === 0) {
+          return false;
+        }
     }
-  }
+  return true;
+}
+
+function getPrimes(num) {
+    for (let number = 2; number <= num; number++) {
+        if (isPrime(number)) {
+            console.log(number);
+        }
+    }
 }
 
 // 10 => 2 3 5 7
@@ -46,10 +67,9 @@ function getPrimes(num) {
 
 // 8
 // 1 .. 8
-// 2 => 8 % 2 === 0 - if 
+// 2 => 8 % 2 === 0 - if
 // 3
 // 4..
-
 
 //test data
 getPrimes(10);

@@ -24,3 +24,24 @@ const unshiftResult = numberList3.unshift('hello');
 console.log(pushResult);
 console.log('AFTER UNSHIFT', numberList3);
 
+
+
+//filter 
+const anotherNumberList = [5, 0, 8, 10, -4, 50, 220];
+
+//input callback
+//output array
+
+//callback 
+//input el, ind, arr
+//output bool
+
+// function filterCallback(num) {
+//   return num > 5;
+// }
+// let filterRes = anotherNumberList.filter(filterCallback);
+
+const filterRes = anotherNumberList.filter(el => el > 100);
+
+console.log(filterRes);
+
